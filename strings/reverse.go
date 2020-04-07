@@ -2,6 +2,8 @@ package strings
 
 func Reverse(s string) string {
 	runes := []rune(s)
-	reversedRunes := reverseRunes(runes)
-	return string(reversedRunes)
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+	return string(runes)
 }
